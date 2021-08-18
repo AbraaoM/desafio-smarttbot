@@ -43,10 +43,28 @@ def CalculateBollBands(data, nDeviation = 2, period = 10, applied_to = 'Close'):
     bollBands["superiorBand"].append(bollBands["ema"][i-period] + nDeviation * deviation)
   return bollBands
 
+def CalculateIFR(data, period = 14):
+
+  data['Variation'] = data['Close'] - data['Open']
+
+  data['Up'] = numpy.where(data['Variation'] > 0, data['Variation'], 0)
+  data['Down'] = numpy.where(data['Variation'] < 0, data['Variation'], 0)
+  
+  data['SmaUp'] = data['Up'].rolling(period).mean()
+  data['SmaDown'] = data['Down'].abs().rolling(period).mean()
+
+  data['IFR'] = 100 - (100 / (1 + (data['SmaUp']/data['SmaDown'])))
+
+  return data
+
+  # for i in range(period, len(data)):
+  #   data['Open'][i] > data['Close'][i] if 
+  # # for i, row in data.iterrows():
+  # #   if(row['Close'] > row[])
+
 data = GetDatabase()
 
-print(len(data[:50]))
-print(CalculateBollBands(data[:50]))
+print(CalculateIFR(data[:50]))
 
 
 
