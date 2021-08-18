@@ -22,7 +22,18 @@ Linha superior = MME + (x * desvio padrão)
 
 Linha inferior = MME - (x * desvio padrão)
 
+# Indice de força relativa
+O Índice de força relativa (IFR) compara a magnitude dos ganhos recentes em um ativo e de suas perdas, retornando números de 0 a 100, na prática é o percentual de ganhos de touros em relação aos ursos em um determinado período.[3]
+
+IFR = 100 - [100 / (1 + (A/B))]
+A = Média de n fechamentos de alta
+B = Média de n fechamentos de baixa
+
+Fechamentos de alta acontecem quando o preço de fechamento de um candle é maior do que o de abertura e fechamentos de baixa são analogamente opostos aos de alta.
+
 # Referências
 [1] Média móvel exponencial(MME). In: LEMOS, Flávio. Análise Técnica dos Mercados Financeiros: Um Guia Completo e Definitivo dos Mercados de Negociação de Ativos. São Paulo - SP: Saraiva, 2016. cap. 8.2.3, p. 181-183
 
 [2] Bandas de Bollinger. In: LEMOS, Flávio. Análise Técnica dos Mercados Financeiros: Um Guia Completo e Definitivo dos Mercados de Negociação de Ativos. São Paulo - SP: Saraiva, 2016. cap. 8.3.3, p. 201-206
+
+[3] Indice de Força Relativa (IFR) ou Relative Strength Index (RSI). In: LEMOS, Flávio. Análise Técnica dos Mercados Financeiros: Um Guia Completo e Definitivo dos Mercados de Negociação de Ativos. São Paulo - SP: Saraiva, 2016. cap. 9.5.1, p. 263-269
